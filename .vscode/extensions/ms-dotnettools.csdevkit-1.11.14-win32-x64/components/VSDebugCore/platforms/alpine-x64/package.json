@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "dependencies": {
+    "@microsoft/visualstudio-debugger-devkit.alpine-x64": "17.12.0-beta.24421.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://devdiv.visualstudio.com/DevDiv/_git/VSDebugCore",
+    "branch": "main"
+  }
+}

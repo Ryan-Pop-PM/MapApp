@@ -1,0 +1,12 @@
+{
+	"private": true,
+	"dependencies": {
+		"@microsoft/vscode.projectsystem.managed": "17.12.44-g5d10bbc745",
+		"@microsoft/vscode.templateengine": "17.12.44-g5d10bbc745"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://devdiv.visualstudio.com/DevDiv/_git/dotnet-project-system-vscode",
+		"branch": "main"
+	}
+}

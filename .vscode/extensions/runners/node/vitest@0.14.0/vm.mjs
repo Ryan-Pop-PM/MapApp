@@ -1,0 +1,1 @@
+import{initialize,start,complete}from"./shared.mjs";import{pathToFileURL}from"url";export async function run(t){await initialize(t);const a=(await import(t.workerPath.startsWith("file://")?t.workerPath:pathToFileURL(t.workerPath))).run;try{await start(),await a(t)}catch(t){return global.$_$wallabyVitest.unhandledError(t),{}}finally{await complete()}return{}}

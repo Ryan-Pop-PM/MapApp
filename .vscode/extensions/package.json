@@ -1,0 +1,58 @@
+{
+	"name": "vscode-for-node-js-development-pack",
+	"displayName": "VS Code for Node.js - Development Pack",
+	"description": "A starter pack of extensions for VS Code + Node.js by NodeSource",
+	"version": "2.0.1",
+	"publisher": "nodesource",
+	"engines": {
+		"vscode": "^1.26.0"
+	},
+	"categories": [
+		"Extension Packs"
+	],
+	"keywords": [
+		"node",
+		"node.js",
+		"nodesource",
+		"beginner"
+	],
+	"galleryBanner": {
+		"color": "#4C5859",
+		"theme": "dark"
+	},
+	"icon": "img/node-js-logo@128h.png",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/nodesource/vs-code-for-node-js-development-pack/issues"
+	},
+	"homepage": "https://github.com/nodesource/vs-code-for-node-js-development-pack",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nodesource/vs-code-for-node-js-development-pack.git"
+	},
+	"extensionPack": [
+		"PeterJausovec.vscode-docker",
+		"Shan.code-settings-sync",
+		"christian-kohler.npm-intellisense",
+		"dbaeumer.vscode-eslint",
+		"ms-azuretools.vscode-azurefunctions",
+		"kisstkondoros.vscode-codemetrics",
+		"msjsdiag.debugger-for-chrome",
+		"wix.vscode-import-cost",
+		"MS-vsliveshare.vsliveshare",
+		"MS-vsliveshare.vsliveshare-audio"
+	],
+	"__metadata": {
+		"id": "1971a826-97ee-4382-9f9f-b8b2d512c46b",
+		"publisherId": "b94b2772-70b6-453f-bc37-8295c02226c6",
+		"publisherDisplayName": "NodeSource",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1730176419548,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

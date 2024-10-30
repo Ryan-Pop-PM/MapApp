@@ -1,0 +1,94 @@
+{
+	"author": "Mariachi Bear",
+	"bugs": {
+		"url": "https://github.com/MariachiBear/vsc-ep-node-backend/issues"
+	},
+	"categories": [
+		"Extension Packs"
+	],
+	"description": "Node.js backend extensions for VSCode",
+	"devDependencies": {
+		"@vscode/vsce": "2.18.0",
+		"cross-env": "7.0.3",
+		"eslint": "8.36.0",
+		"eslint-config-prettier": "8.8.0",
+		"eslint-scope": "7.1.1",
+		"eslint-utils": "3.0.0",
+		"eslint-visitor-keys": "3.3.0",
+		"husky": "8.0.3",
+		"lint-staged": "13.2.0",
+		"pnpm": "7.30.3",
+		"prettier": "2.8.7",
+		"prompt-confirm": "2.0.4",
+		"rimraf": "4.4.1"
+	},
+	"displayName": "VSCodeEP: Node.js Back-End",
+	"engines": {
+		"vscode": "^1.58.0"
+	},
+	"extensionPack": [
+		"aaron-bond.better-comments",
+		"bengreenier.vscode-node-readme",
+		"christian-kohler.npm-intellisense",
+		"dbaeumer.vscode-eslint",
+		"dsznajder.es7-react-js-snippets",
+		"EQuimper.react-native-react-redux",
+		"esbenp.prettier-vscode",
+		"idered.npm",
+		"johnpapa.Angular2",
+		"mikestead.dotenv",
+		"oouo-diogo-perdigao.docthis",
+		"pflannery.vscode-versionlens",
+		"ritwickdey.LiveServer",
+		"sburg.vscode-javascript-booster",
+		"steoates.autoimport",
+		"WallabyJs.wallaby-vscode",
+		"wix.vscode-import-cost",
+		"xabikos.JavaScriptSnippets"
+	],
+	"homepage": "https://github.com/MariachiBear/vsc-ep-node-backend#readme",
+	"icon": "icon.png",
+	"keywords": [],
+	"license": "MIT",
+	"lint-staged": {
+		"*.js": "eslint --cache --fix",
+		"*.{js,css,md}": "prettier --write"
+	},
+	"name": "vsc-ep-node-backend",
+	"publisher": "MariachiBear",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/MariachiBear/vsc-ep-node-backend.git"
+	},
+	"scripts": {
+		"build": "pnpm build:clean && pnpm build:install && pnpm build:package",
+		"build:clean": "rimraf ./*.vsix && rimraf ./node_modules",
+		"build:install": "npm install --ignore-engines",
+		"build:package": "vsce package",
+		"deploy": "pnpm deploy:confirm && pnpm build && pnpm deploy:publish",
+		"deploy:confirm": "cross-env NODE_ENV=prompt:confirm node node-scripts.js",
+		"deploy:publish": "vsce publish",
+		"eslint:check": "eslint --ext .js,.jsx --ignore-path .gitignore . --color",
+		"eslint:fix": "eslint --ext .js,.jsx --ignore-path .gitignore . --fix",
+		"prepare": "husky install",
+		"prettier:check": "prettier \"./**/*.{js,jsx}\" --ignore-path .gitignore -l ",
+		"prettier:format": "prettier \"./**/*.{js,jsx}\" --ignore-path .gitignore -l --write",
+		"refresh": "pnpm refresh:clean && npm init -y && pnpm refresh:clear",
+		"refresh:clean": "cross-env NODE_ENV=refresh:clean node node-scripts.js",
+		"refresh:clear": "cross-env NODE_ENV=refresh:clear node node-scripts.js"
+	},
+	"version": "0.0.1",
+	"__metadata": {
+		"id": "38690f49-be92-413d-996b-55dc4faef54b",
+		"publisherId": "ac74b73f-8687-448e-a8a9-1b5611ad0b4d",
+		"publisherDisplayName": "Mariachi Bear",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1730211525911,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

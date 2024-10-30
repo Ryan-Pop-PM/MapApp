@@ -1,0 +1,85 @@
+{
+	"author": "Mariachi Bear",
+	"bugs": {
+		"url": "https://github.com/MariachiBear/vsc-ep-node-frontend/issues"
+	},
+	"categories": [
+		"Extension Packs"
+	],
+	"description": "Node.js frontend extensions for VSCode",
+	"devDependencies": {
+		"@vscode/vsce": "2.18.0",
+		"cross-env": "7.0.3",
+		"eslint": "8.36.0",
+		"eslint-config-prettier": "8.8.0",
+		"eslint-scope": "7.1.1",
+		"eslint-utils": "3.0.0",
+		"eslint-visitor-keys": "3.3.0",
+		"husky": "8.0.3",
+		"lint-staged": "13.2.0",
+		"pnpm": "7.30.3",
+		"prettier": "2.8.7",
+		"prompt-confirm": "2.0.4",
+		"rimraf": "4.4.1"
+	},
+	"displayName": "VSCodeEP: Node.js Front-End",
+	"engines": {
+		"vscode": "^1.58.0"
+	},
+	"extensionPack": [
+		"accessibility-snippets.accessibility-snippets",
+		"formulahendry.auto-complete-tag",
+		"joy-yu.css-snippets",
+		"MariachiBear.vsc-ep-node-backend",
+		"ohansemmanuel.css-grid-snippets",
+		"pranaygp.vscode-css-peek",
+		"publisher.extensionName",
+		"vincaslt.highlight-matching-tag",
+		"Zignd.html-css-class-completion"
+	],
+	"homepage": "https://github.com/MariachiBear/vsc-ep-node-frontend#readme",
+	"icon": "icon.png",
+	"keywords": [],
+	"license": "MIT",
+	"lint-staged": {
+		"*.js": "eslint --cache --fix",
+		"*.{js,css,md}": "prettier --write"
+	},
+	"name": "vsc-ep-node-frontend",
+	"publisher": "MariachiBear",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/MariachiBear/vsc-ep-node-frontend.git"
+	},
+	"scripts": {
+		"build": "pnpm build:clean && pnpm build:install && pnpm build:package",
+		"build:clean": "rimraf ./*.vsix && rimraf ./node_modules",
+		"build:install": "npm install --ignore-engines",
+		"build:package": "vsce package",
+		"deploy": "pnpm deploy:confirm && pnpm build && pnpm deploy:publish",
+		"deploy:confirm": "cross-env NODE_ENV=prompt:confirm node node-scripts.js",
+		"deploy:publish": "vsce publish",
+		"eslint:check": "eslint --ext .js,.jsx --ignore-path .gitignore . --color",
+		"eslint:fix": "eslint --ext .js,.jsx --ignore-path .gitignore . --fix",
+		"prepare": "husky install",
+		"prettier:check": "prettier \"./**/*.{js,jsx}\" --ignore-path .gitignore -l ",
+		"prettier:format": "prettier \"./**/*.{js,jsx}\" --ignore-path .gitignore -l --write",
+		"refresh": "pnpm refresh:clean && npm init -y && pnpm refresh:clear",
+		"refresh:clean": "cross-env NODE_ENV=refresh:clean node node-scripts.js",
+		"refresh:clear": "cross-env NODE_ENV=refresh:clear node node-scripts.js"
+	},
+	"version": "0.0.1",
+	"__metadata": {
+		"id": "b6751f09-8a5d-41f1-bf0d-fa6ebc6cfb8e",
+		"publisherId": "ac74b73f-8687-448e-a8a9-1b5611ad0b4d",
+		"publisherDisplayName": "Mariachi Bear",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1730211525974,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}
